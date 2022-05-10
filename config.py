@@ -51,10 +51,14 @@ class Config:
     JWT_ALGORITHM = "RS256"
     JWT_DECODE_ALGORITHMS = "RS256"
 
+    USER_NAME = getenv('USER_NAME')
+    PASSWORD = getenv('PASSWORD')
+    ENV = 'sandbox'
+
     MICRO_SERVICE_NAME = 'kiosk'
     CONFIGURATION_MOUNT_POINT = 'configuration'
     DATABASE_MOUNT_POINT = 'database'
-    CONFIGURATION_PATH = f'sandbox/parameters/{MICRO_SERVICE_NAME}'
+    CONFIGURATION_PATH = f'{ENV}/parameters/{MICRO_SERVICE_NAME}'
 
     module_parameters = get_vault_module_params(
         client=client,
@@ -71,7 +75,7 @@ class Config:
         secret_path=module_parameters['database_parameters_path'],
         mount_point=CONFIGURATION_MOUNT_POINT)['data']
 
-    database_credentials = client.read(DATABASE_MOUNT_POINT + f'/creds/{MICRO_SERVICE_NAME}-sandbox')
+    database_credentials = client.read(DATABASE_MOUNT_POINT + f'/creds/{MICRO_SERVICE_NAME}-{ENV}')
 
     db_credentials_expiry_time = datetime.now() + timedelta(seconds=database_credentials["lease_duration"])
 

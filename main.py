@@ -50,7 +50,7 @@ def update_params(quit_counter=0):
     # Update DB params
     if Config.db_credentials_expiry_time < datetime.now():
         try:
-            info = config.client.read(Config.module_parameters['database_credentials_path'])
+            info = config.client.read(Config.DATABASE_MOUNT_POINT + f'/creds/{Config.MICRO_SERVICE_NAME}-{Config.ENV}')
             data = info['data']
             Config.db_credentials_expiry_time = datetime.now() + timedelta(seconds=info['lease_duration'])
             Config.DB_USERNAME = data['username']
