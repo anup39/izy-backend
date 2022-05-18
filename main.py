@@ -78,7 +78,7 @@ def update_params(quit_counter=0):
 
     # Update module token params
     if config.module_token_expiry_time < datetime.now():
-        config.module_token = requests.post(Config.URL_USERMANAGEMENT + '/api/users/module-login', json={'username': os.getenv('USER_NAME'), 'password': os.getenv('PASSWORD')}).json()
+        config.module_token = requests.post(Config.URL_USERMANAGEMENT + '/users/module-login', json={'username': os.getenv('USER_NAME'), 'password': os.getenv('PASSWORD')}).json()
         config.token_expiry_time = datetime.now() + timedelta(seconds=decode_token(config.module_token)['exp'])
 
 

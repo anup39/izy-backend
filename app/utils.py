@@ -66,7 +66,7 @@ def get_new_entity_id(entity_class):
 
 def update_creator_access(user_id, entity_id, role_id):
     response = requests.put(
-        Config.URL_USERMANAGEMENT + '/api/users/access/roles',
+        Config.URL_USERMANAGEMENT + '/users/access/roles',
         json={
             'user_id': user_id,
             'entity_id': entity_id,
