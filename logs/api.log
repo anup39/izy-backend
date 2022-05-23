@@ -1,0 +1,2283 @@
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [03/May/2022 08:42:15] "GET /api/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/May/2022 08:42:15] "GET /swaggerui/swagger-ui.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/May/2022 08:42:15] "GET /swaggerui/droid-sans.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/May/2022 08:42:15] "GET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/May/2022 08:42:15] "GET /swaggerui/swagger-ui-bundle.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/May/2022 08:42:15] "GET /api/swagger.json HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/May/2022 08:42:15] "GET /swaggerui/favicon-32x32.png HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 14:09:20] "GET /api/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 14:09:20] "[36mGET /swaggerui/droid-sans.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 14:09:20] "GET /swaggerui/swagger-ui.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 14:09:20] "GET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 14:09:20] "GET /swaggerui/swagger-ui-bundle.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 14:09:20] "GET /api/swagger.json HTTP/1.1" 200 -
+ERROR:flask_restx.namespace.data:'product_name' is an invalid keyword argument for OrderLines
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/create_data/controller.py", line 43, in post
+    return create_orders()
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/create_data/service.py", line 58, in create_orders
+    new_order_line = OrderLines(**order_line)
+  File "<string>", line 4, in __init__
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/orm/state.py", line 480, in _initialize_instance
+    manager.dispatch.init_failure(self, args, kwargs)
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/orm/state.py", line 477, in _initialize_instance
+    return manager.original_init(*mixed[1:], **kwargs)
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/orm/decl_base.py", line 1142, in _declarative_constructor
+    raise TypeError(
+TypeError: 'product_name' is an invalid keyword argument for OrderLines
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 14:09:27] "[35m[1mPOST /api/data/create-orders HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.data:(psycopg2.errors.UndefinedTable) relation "order_lines" does not exist
+LINE 1: INSERT INTO order_lines (order_line_id, parent_order_id, ord...
+                    ^
+
+[SQL: INSERT INTO order_lines (order_line_id, parent_order_id, order_line_reference, product_id, product_name, product_price_ex_vat, vat_rate, product_price_incl_vat, quantity, total_amount_ex_vat, total_amount_incl_vat, total_subsidy_amount_incl_vat, created_at, updated_at, deleted_at) VALUES (%(order_line_id)s, %(parent_order_id)s, %(order_line_reference)s, %(product_id)s, %(product_name)s, %(product_price_ex_vat)s, %(vat_rate)s, %(product_price_incl_vat)s, %(quantity)s, %(total_amount_ex_vat)s, %(total_amount_incl_vat)s, %(total_subsidy_amount_incl_vat)s, %(created_at)s, %(updated_at)s, %(deleted_at)s)]
+[parameters: ({'order_line_id': UUID('3c841edb-ad1c-427d-825e-1d6d10c1f99f'), 'parent_order_id': 'bbf91984-6da1-4436-905b-b353ea00e20a', 'order_line_reference': None, 'product_id': 'f3b66c31-c143-4cfc-b95e-136391b2731f', 'product_name': 'AbsorbedHeartache', 'product_price_ex_vat': 28, 'vat_rate': 0, 'product_price_incl_vat': 28.0, 'quantity': 2, 'total_amount_ex_vat': 56, 'total_amount_incl_vat': 56.0, 'total_subsidy_amount_incl_vat': None, 'created_at': '2022-07-12 12:00:00', 'updated_at': None, 'deleted_at': None}, {'order_line_id': UUID('0a32d195-8ed3-4da8-9cc6-7e421ade04b2'), 'parent_order_id': 'bbf91984-6da1-4436-905b-b353ea00e20a', 'order_line_reference': None, 'product_id': 'fc3ea989-ba42-4506-b2ce-7fdedfb37497', 'product_name': 'VoicelessCutover', 'product_price_ex_vat': 12, 'vat_rate': 25, 'product_price_incl_vat': 15.0, 'quantity': 1, 'total_amount_ex_vat': 12, 'total_amount_incl_vat': 15.0, 'total_subsidy_amount_incl_vat': None, 'created_at': '2022-07-12 12:00:00', 'updated_at': None, 'deleted_at': None}, {'order_line_id': UUID('cd67054f-24a2-4fef-8a43-b062200088d1'), 'parent_order_id': 'bbf91984-6da1-4436-905b-b353ea00e20a', 'order_line_reference': None, 'product_id': '7e178bf5-3c21-4e4d-9232-d2d5efb33f29', 'product_name': 'FertileDiaper', 'product_price_ex_vat': 30, 'vat_rate': 25, 'product_price_incl_vat': 37.5, 'quantity': 1, 'total_amount_ex_vat': 30, 'total_amount_incl_vat': 37.5, 'total_subsidy_amount_incl_vat': None, 'created_at': '2022-07-12 12:00:00', 'updated_at': None, 'deleted_at': None})]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+Traceback (most recent call last):
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1779, in _execute_context
+    self.dialect.do_executemany(
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 962, in do_executemany
+    context._psycopg2_fetched_rows = xtras.execute_values(
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/psycopg2/extras.py", line 1270, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.UndefinedTable: relation "order_lines" does not exist
+LINE 1: INSERT INTO order_lines (order_line_id, parent_order_id, ord...
+                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/create_data/controller.py", line 43, in post
+    return create_orders()
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/create_data/service.py", line 61, in create_orders
+    current_session.commit()
+  File "<string>", line 2, in commit
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 829, in commit
+    self._prepare_impl()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 3339, in flush
+    self._flush(objects)
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 3479, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 3439, in _flush
+    flush_context.execute()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/orm/persistence.py", line 242, in save_obj
+    _emit_insert_statements(
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/orm/persistence.py", line 1153, in _emit_insert_statements
+    c = connection._execute_20(
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1611, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 323, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1478, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1842, in _execute_context
+    self._handle_dbapi_exception(
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2023, in _handle_dbapi_exception
+    util.raise_(
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1779, in _execute_context
+    self.dialect.do_executemany(
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 962, in do_executemany
+    context._psycopg2_fetched_rows = xtras.execute_values(
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/psycopg2/extras.py", line 1270, in execute_values
+    cur.execute(b''.join(parts))
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "order_lines" does not exist
+LINE 1: INSERT INTO order_lines (order_line_id, parent_order_id, ord...
+                    ^
+
+[SQL: INSERT INTO order_lines (order_line_id, parent_order_id, order_line_reference, product_id, product_name, product_price_ex_vat, vat_rate, product_price_incl_vat, quantity, total_amount_ex_vat, total_amount_incl_vat, total_subsidy_amount_incl_vat, created_at, updated_at, deleted_at) VALUES (%(order_line_id)s, %(parent_order_id)s, %(order_line_reference)s, %(product_id)s, %(product_name)s, %(product_price_ex_vat)s, %(vat_rate)s, %(product_price_incl_vat)s, %(quantity)s, %(total_amount_ex_vat)s, %(total_amount_incl_vat)s, %(total_subsidy_amount_incl_vat)s, %(created_at)s, %(updated_at)s, %(deleted_at)s)]
+[parameters: ({'order_line_id': UUID('3c841edb-ad1c-427d-825e-1d6d10c1f99f'), 'parent_order_id': 'bbf91984-6da1-4436-905b-b353ea00e20a', 'order_line_reference': None, 'product_id': 'f3b66c31-c143-4cfc-b95e-136391b2731f', 'product_name': 'AbsorbedHeartache', 'product_price_ex_vat': 28, 'vat_rate': 0, 'product_price_incl_vat': 28.0, 'quantity': 2, 'total_amount_ex_vat': 56, 'total_amount_incl_vat': 56.0, 'total_subsidy_amount_incl_vat': None, 'created_at': '2022-07-12 12:00:00', 'updated_at': None, 'deleted_at': None}, {'order_line_id': UUID('0a32d195-8ed3-4da8-9cc6-7e421ade04b2'), 'parent_order_id': 'bbf91984-6da1-4436-905b-b353ea00e20a', 'order_line_reference': None, 'product_id': 'fc3ea989-ba42-4506-b2ce-7fdedfb37497', 'product_name': 'VoicelessCutover', 'product_price_ex_vat': 12, 'vat_rate': 25, 'product_price_incl_vat': 15.0, 'quantity': 1, 'total_amount_ex_vat': 12, 'total_amount_incl_vat': 15.0, 'total_subsidy_amount_incl_vat': None, 'created_at': '2022-07-12 12:00:00', 'updated_at': None, 'deleted_at': None}, {'order_line_id': UUID('cd67054f-24a2-4fef-8a43-b062200088d1'), 'parent_order_id': 'bbf91984-6da1-4436-905b-b353ea00e20a', 'order_line_reference': None, 'product_id': '7e178bf5-3c21-4e4d-9232-d2d5efb33f29', 'product_name': 'FertileDiaper', 'product_price_ex_vat': 30, 'vat_rate': 25, 'product_price_incl_vat': 37.5, 'quantity': 1, 'total_amount_ex_vat': 30, 'total_amount_incl_vat': 37.5, 'total_subsidy_amount_incl_vat': None, 'created_at': '2022-07-12 12:00:00', 'updated_at': None, 'deleted_at': None})]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 14:10:00] "[35m[1mPOST /api/data/create-orders HTTP/1.1[0m" 500 -
+ERROR:flask_migrate:Error: Path doesn't exist: '/Users/collier/PycharmProjects/3.0-template/migrations'.  Please use the 'init' command to create a new scripts folder.
+ERROR:flask_migrate:Error: Directory migrations already exists and is not empty
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:33:17] "GET /api/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:33:17] "[36mGET /swaggerui/swagger-ui.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:33:17] "[36mGET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:33:17] "[36mGET /swaggerui/droid-sans.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:33:17] "[36mGET /swaggerui/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:33:17] "GET /api/swagger.json HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:33:17] "[36mGET /swaggerui/favicon-32x32.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:33:24] "POST /api/data/create-orders HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:37:42] "GET /api/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:37:42] "[36mGET /swaggerui/droid-sans.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:37:42] "[36mGET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:37:42] "[36mGET /swaggerui/swagger-ui.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:37:42] "[36mGET /swaggerui/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:37:42] "GET /api/swagger.json HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:37:42] "[36mGET /swaggerui/favicon-32x32.png HTTP/1.1[0m" 304 -
+ERROR:flask_restx.namespace.orders:'page_limit'
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/controller.py", line 69, in get
+    page_limit=pagination['page_limit']
+KeyError: 'page_limit'
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:38:22] "[35m[1mGET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:app:Exception on /api/orders/ [GET]
+Traceback (most recent call last):
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask_restx/api.py", line 407, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask_restx/api.py", line 430, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask_restx/representations.py", line 25, in output_json
+    dumped = dumps(data, **settings) + "\n"
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type UUID is not JSON serializable
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:38:53] "[35m[1mGET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:39:07] "GET /api/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:39:07] "GET /swaggerui/droid-sans.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:39:07] "GET /swaggerui/swagger-ui.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:39:07] "GET /swaggerui/swagger-ui-bundle.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:39:07] "GET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:39:07] "GET /api/swagger.json HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:39:07] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:39:07] "GET /swaggerui/favicon-16x16.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:39:07] "GET /swaggerui/favicon-32x32.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:39:07] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [06/May/2022 15:39:13] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:13:25] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:13:36] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:13:53] "POST /api/data/create-orders HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:14:55] "POST /api/data/create-orders HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:15:02] "POST /api/data/create-orders HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:15:34] "POST /api/data/create-orders HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:15:39] "POST /api/data/create-orders HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:15:54] "POST /api/data/create-orders HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:15:55] "POST /api/data/create-orders HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:16:14] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:16:51] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:'Query' object has no attribute 'paginate'
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/service.py", line 100, in get_orders
+    orders = current_session.query(Orders).filter(Orders.store_id == store_id).order_by(order_direction(order_by)).paginate(page=page, per_page=limit).all()
+AttributeError: 'Query' object has no attribute 'paginate'
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:19:22] "[35m[1mGET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:'Query' object has no attribute 'paginate'
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/service.py", line 100, in get_orders
+    orders = current_session.query(Orders).filter(Orders.store_id == store_id).order_by(order_direction(order_by)).paginate(page=page, per_page=limit).items
+AttributeError: 'Query' object has no attribute 'paginate'
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:19:49] "[35m[1mGET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:'int' object is not callable
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/service.py", line 100, in get_orders
+    orders = paginate(query=current_session.query(Orders).filter(Orders.store_id == store_id).order_by(order_direction(order_by)).all(), page=page, limit=limit)
+TypeError: 'int' object is not callable
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:27:26] "[35m[1mGET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:'int' object is not callable
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/service.py", line 100, in get_orders
+    orders = paginate(query=current_session.query(Orders).filter(Orders.store_id == store_id).order_by(order_direction(order_by)).all(), page=page, limit=limit).items
+TypeError: 'int' object is not callable
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:28:34] "[35m[1mGET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:'int' object is not callable
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/service.py", line 100, in get_orders
+    orders = paginate(query=current_session.query(Orders).filter(Orders.store_id == store_id).order_by(order_direction(order_by)).all(), page=1, limit=20).items
+TypeError: 'int' object is not callable
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:29:08] "[35m[1mGET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:'int' object is not callable
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/service.py", line 100, in get_orders
+    orders = paginate(query=current_session.query(Orders).filter(Orders.store_id == store_id).order_by(order_direction(order_by)).all(), page=1, limit=20).items
+TypeError: 'int' object is not callable
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:29:38] "[35m[1mGET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:'int' object is not callable
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/service.py", line 100, in get_orders
+    orders = paginate(query=current_session.query(Orders).filter(Orders.store_id == store_id).order_by(order_direction(order_by)).all(), page=1, limit=20).items
+TypeError: 'int' object is not callable
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:30:31] "[35m[1mGET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:'int' object is not callable
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/service.py", line 100, in get_orders
+    orders = paginate(query=current_session.query(Orders).filter(Orders.store_id == store_id).order_by(order_direction(order_by)), page=1, limit=20).items
+TypeError: 'int' object is not callable
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:31:37] "[35m[1mGET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:'int' object is not callable
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/service.py", line 101, in get_orders
+    orders = paginate(query=current_session.query(Orders).filter(Orders.store_id == store_id).order_by(order_direction(order_by)), page=1, limit=20)
+TypeError: 'int' object is not callable
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:32:19] "[35m[1mGET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:'int' object is not callable
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/service.py", line 101, in get_orders
+    orders = paginate(query=current_session.query(Orders).filter(Orders.store_id == store_id), page=1, limit=20)
+TypeError: 'int' object is not callable
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:33:47] "[35m[1mGET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:'int' object is not callable
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/service.py", line 101, in get_orders
+    orders = paginate(query=current_session.query(Orders), page=1, limit=20)
+TypeError: 'int' object is not callable
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:34:12] "[35m[1mGET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:'int' object is not callable
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/service.py", line 101, in get_orders
+    orders = paginate(query=current_session.query(Orders), page=1, limit=20)
+TypeError: 'int' object is not callable
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:35:22] "[35m[1mGET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:'int' object is not callable
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/service.py", line 102, in get_orders
+    orders = paginate(query=current_session.query(Orders), page=1, limit=20)
+TypeError: 'int' object is not callable
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:35:40] "[35m[1mGET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:'int' object is not callable
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/service.py", line 102, in get_orders
+    orders = paginate(query=current_session.query(Orders), page=1, limit=20, error_out=False)
+TypeError: 'int' object is not callable
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:36:30] "[35m[1mGET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:'int' object is not callable
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/service.py", line 102, in get_orders
+    orders = paginate(query=current_session.query(Orders))
+TypeError: 'int' object is not callable
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:37:20] "[35m[1mGET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:'Pagination' object is not iterable
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/service.py", line 106, in get_orders
+    for order in orders:
+TypeError: 'Pagination' object is not iterable
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:38:38] "[35m[1mGET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:38:55] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:40:11] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:40:56] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:41:05] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&order_direction=asc HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:41:14] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&order_direction=desc HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:42:01] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&order_direction=desc HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:42:10] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&order_by=user_full_name&order_direction=desc HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:42:14] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&order_by=user_full_name&order_direction=asc HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:'int' object is not callable
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/service.py", line 104, in get_orders
+    total_pages = paginated_query.pages()
+TypeError: 'int' object is not callable
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:48:33] "[35m[1mGET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&order_by=user_full_name&order_direction=asc HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:52:02] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&order_by=user_full_name&order_direction=asc HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:53:18] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&order_by=user_full_name&order_direction=asc HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 11:53:42] "GET /api/orders/?paginate=0&limit=100&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&order_by=user_full_name&order_direction=asc HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:'NoPagination' object has no attribute 'pages'
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/service.py", line 104, in get_orders
+    total_pages = paginated_query.pages
+AttributeError: 'NoPagination' object has no attribute 'pages'
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 12:38:35] "[35m[1mGET /api/orders/?paginate=0&limit=100&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&order_by=user_full_name&order_direction=asc HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 12:39:28] "GET /api/orders/?paginate=0&limit=100&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&order_by=user_full_name&order_direction=asc HTTP/1.1" 200 -
+ERROR:flask_restx.namespace.orders:
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/controller.py", line 60, in get
+    check_page_args(paginate=pagination['paginate'], page=pagination['page'], limit=pagination['limit'])
+  File "/Users/collier/PycharmProjects/3.0-template/app/utils.py", line 82, in check_page_args
+    raise ValueError
+ValueError
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 12:39:40] "[35m[1mGET /api/orders/?paginate=1&limit=100&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&order_by=user_full_name&order_direction=asc HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/controller.py", line 60, in get
+    check_page_args(paginate=pagination['paginate'], page=pagination['page'], limit=pagination['limit'])
+  File "/Users/collier/PycharmProjects/3.0-template/app/utils.py", line 82, in check_page_args
+    raise ValueError
+ValueError
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 12:40:10] "[31m[1mGET /api/orders/?paginate=1&limit=100&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&order_by=user_full_name&order_direction=asc HTTP/1.1[0m" 400 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 12:40:21] "GET /api/orders/?paginate=1&page=1&limit=100&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&order_by=user_full_name&order_direction=asc HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 12:40:31] "GET /api/orders/?paginate=1&page=4&limit=100&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&order_by=user_full_name&order_direction=asc HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:03:43] "GET /api/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:03:43] "[36mGET /swaggerui/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:03:43] "[36mGET /swaggerui/swagger-ui.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:03:43] "[36mGET /swaggerui/droid-sans.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:03:43] "[36mGET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:03:43] "GET /api/swagger.json HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:03:43] "[36mGET /swaggerui/favicon-32x32.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:04:21] "GET /api/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:04:21] "[36mGET /swaggerui/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:04:21] "[36mGET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:04:21] "[36mGET /swaggerui/droid-sans.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:04:21] "[36mGET /swaggerui/swagger-ui.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:04:21] "GET /api/swagger.json HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:04:21] "[36mGET /swaggerui/favicon-32x32.png HTTP/1.1[0m" 304 -
+ERROR:flask_restx.namespace.orders:get_orders() missing 1 required positional argument: 'pg_args'
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/controller.py", line 69, in get
+    return get_orders(store_id=args['store_id'], search=args['search'], ob_args=ob_args, df_args=df_args)
+TypeError: get_orders() missing 1 required positional argument: 'pg_args'
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:04:38] "[35m[1mGET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:05:05] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+ERROR:flask_restx.namespace.orders:
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/controller.py", line 68, in get
+    check_page_args(paginate=pagination['paginate'], page=pagination['page'], limit=pagination['limit'])
+  File "/Users/collier/PycharmProjects/3.0-template/app/utils.py", line 81, in check_page_args
+    raise ValueError
+ValueError
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:05:10] "[31m[1mGET /api/orders/?paginate=1&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 400 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:05:16] "GET /api/orders/?paginate=1&page=1&limit=50&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:05:37] "GET /api/orders/?paginate=1&page=1&limit=50&order_by=store_id&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:05:47] "GET /api/orders/?paginate=1&page=1&limit=50&order_by=user_full_name&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:05:51] "GET /api/orders/?paginate=1&page=1&limit=50&order_by=user_full_name&order_direction=asc&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:06:00] "GET /api/orders/?paginate=1&page=1&limit=50&order_by=user_email&order_direction=asc&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:06:08] "GET /api/orders/?paginate=1&page=1&limit=50&order_by=user_email&order_direction=desc&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:07:12] "GET /api/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:07:12] "[36mGET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:07:12] "[36mGET /swaggerui/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:07:12] "[36mGET /swaggerui/swagger-ui.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:07:12] "[36mGET /swaggerui/droid-sans.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:07:12] "GET /api/swagger.json HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:07:12] "[36mGET /swaggerui/favicon-32x32.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:07:33] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:07:43] "GET /api/orders/?paginate=0&order_by=user_full_name&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:07:50] "GET /api/orders/?paginate=0&order_by=user_full_name&order_direction=asc&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:08:10] "GET /api/orders/?paginate=1&page=10&limit=20&order_by=user_full_name&order_direction=asc&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:08:28] "GET /api/orders/?paginate=1&page=10&limit=20&order_by=user_full_name&order_direction=asc&date_from=2022-02-01&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:08:42] "GET /api/orders/?paginate=1&page=10&limit=20&order_by=user_full_name&order_direction=asc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:08:50] "GET /api/orders/?paginate=1&page=10&limit=20&order_by=user_full_name&order_direction=asc&date_from=2022-02-01&date_to=2022-08-19&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:09:00] "GET /api/orders/?paginate=0&page=10&limit=20&order_by=user_full_name&order_direction=asc&date_from=2022-02-01&date_to=2022-08-19&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:09:11] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=asc&date_from=2022-02-01&date_to=2022-08-19&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:09:18] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-19&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:09:27] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:15:01] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:15:44] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:16:04] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:16:11] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search=Ruby HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:16:57] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search=Ruby HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:16:59] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:18:50] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:19:04] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:SQL expression for WHERE/HAVING role expected, got [<sqlalchemy.sql.elements.BinaryExpression object at 0x7faf3860e1c0>].
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/service.py", line 89, in get_orders
+    query = current_session.query(Orders).filter(
+  File "<string>", line 2, in filter
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/sql/base.py", line 104, in _generative
+    x = fn(self, *args, **kw)
+  File "<string>", line 2, in filter
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/orm/base.py", line 230, in generate
+    fn(self, *args[1:], **kw)
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 1687, in filter
+    criterion = coercions.expect(
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 187, in expect
+    resolved = impl._literal_coercion(
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 401, in _literal_coercion
+    self._raise_for_expected(element, argname)
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 283, in _raise_for_expected
+    util.raise_(exc.ArgumentError(msg, code=code), replace_context=err)
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+sqlalchemy.exc.ArgumentError: SQL expression for WHERE/HAVING role expected, got [<sqlalchemy.sql.elements.BinaryExpression object at 0x7faf3860e1c0>].
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:19:33] "[35m[1mGET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:19:44] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:(psycopg2.errors.UndefinedFunction) operator does not exist: uuid ~~ unknown
+LINE 3: ...s.user_full_name LIKE '%Ruby%' AND orders.user_id LIKE '%cc1...
+                                                             ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: SELECT orders.order_id AS orders_order_id, orders.store_id AS orders_store_id, orders.pos_id AS orders_pos_id, orders.order_reference AS orders_order_reference, orders.total_amount_ex_vat AS orders_total_amount_ex_vat, orders.total_vat_amount AS orders_total_vat_amount, orders.total_amount_incl_vat AS orders_total_amount_incl_vat, orders.payment_method_id AS orders_payment_method_id, orders.payment_status_id AS orders_payment_status_id, orders.cash_order AS orders_cash_order, orders.user_id AS orders_user_id, orders.user_email AS orders_user_email, orders.user_full_name AS orders_user_full_name, orders.ordered_by AS orders_ordered_by, orders.created_at AS orders_created_at, orders.updated_at AS orders_updated_at, orders.deleted_at AS orders_deleted_at 
+FROM orders 
+WHERE orders.store_id = %(store_id_1)s AND orders.created_at >= %(created_at_1)s AND orders.created_at <= %(created_at_2)s AND orders.user_full_name LIKE %(user_full_name_1)s AND orders.user_id LIKE %(user_id_1)s ORDER BY orders.created_at DESC]
+[parameters: {'store_id_1': 'a05d63ce-9c85-4058-807b-7040d5b95c7f', 'created_at_1': '2022-02-01 00:00:00.00000', 'created_at_2': '2022-08-18 23:59:59.99999', 'user_full_name_1': '%Ruby%', 'user_id_1': '%cc1%'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+Traceback (most recent call last):
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1799, in _execute_context
+    self.dialect.do_execute(
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedFunction: operator does not exist: uuid ~~ unknown
+LINE 3: ...s.user_full_name LIKE '%Ruby%' AND orders.user_id LIKE '%cc1...
+                                                             ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/service.py", line 96, in get_orders
+    paginated_query = paginate_query(query=query, paginate=pg_args['paginate'], page=pg_args['page'], limit=pg_args['limit'])
+  File "/Users/collier/PycharmProjects/3.0-template/app/utils.py", line 122, in paginate_query
+    return NoPagination(query=query, items=query.all())
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2711, in all
+    return self._iter().all()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2846, in _iter
+    result = self.session.execute(
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1689, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1611, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 323, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1478, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1842, in _execute_context
+    self._handle_dbapi_exception(
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2023, in _handle_dbapi_exception
+    util.raise_(
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1799, in _execute_context
+    self.dialect.do_execute(
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedFunction) operator does not exist: uuid ~~ unknown
+LINE 3: ...s.user_full_name LIKE '%Ruby%' AND orders.user_id LIKE '%cc1...
+                                                             ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: SELECT orders.order_id AS orders_order_id, orders.store_id AS orders_store_id, orders.pos_id AS orders_pos_id, orders.order_reference AS orders_order_reference, orders.total_amount_ex_vat AS orders_total_amount_ex_vat, orders.total_vat_amount AS orders_total_vat_amount, orders.total_amount_incl_vat AS orders_total_amount_incl_vat, orders.payment_method_id AS orders_payment_method_id, orders.payment_status_id AS orders_payment_status_id, orders.cash_order AS orders_cash_order, orders.user_id AS orders_user_id, orders.user_email AS orders_user_email, orders.user_full_name AS orders_user_full_name, orders.ordered_by AS orders_ordered_by, orders.created_at AS orders_created_at, orders.updated_at AS orders_updated_at, orders.deleted_at AS orders_deleted_at 
+FROM orders 
+WHERE orders.store_id = %(store_id_1)s AND orders.created_at >= %(created_at_1)s AND orders.created_at <= %(created_at_2)s AND orders.user_full_name LIKE %(user_full_name_1)s AND orders.user_id LIKE %(user_id_1)s ORDER BY orders.created_at DESC]
+[parameters: {'store_id_1': 'a05d63ce-9c85-4058-807b-7040d5b95c7f', 'created_at_1': '2022-02-01 00:00:00.00000', 'created_at_2': '2022-08-18 23:59:59.99999', 'user_full_name_1': '%Ruby%', 'user_id_1': '%cc1%'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:20:47] "[35m[1mGET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:type object 'Orders' has no attribute 'email'
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/service.py", line 87, in get_orders
+    search_filter = [Orders.user_full_name.like(f'%{""}%'), Orders.email.like(f'%{""}%')]
+AttributeError: type object 'Orders' has no attribute 'email'
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:21:35] "[35m[1mGET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:21:50] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:22:10] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:22:22] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:22:47] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:24:34] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:24:46] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.data:'Test' object has no attribute 'model'
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/create_data/controller.py", line 20, in get
+    for column in self.model.__table__.columns:
+AttributeError: 'Test' object has no attribute 'model'
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:31:23] "[35m[1mGET /api/data/ HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:app:Exception on /api/data/ [GET]
+Traceback (most recent call last):
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask_restx/api.py", line 407, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask_restx/api.py", line 430, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask_restx/representations.py", line 25, in output_json
+    dumped = dumps(data, **settings) + "\n"
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type UUID is not JSON serializable
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:31:52] "[35m[1mGET /api/data/ HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:32:06] "GET /api/data/ HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:type object 'Orders' has no attribute 'column'
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/service.py", line 89, in get_orders
+    sf = QuerySearchFilter(model=Orders, search_string=search_string).all_columns
+  File "/Users/collier/PycharmProjects/3.0-template/app/support_classes.py", line 64, in all_columns
+    search_objects.append(self.model.column.like(f'%{self.search_string}%'))
+AttributeError: type object 'Orders' has no attribute 'column'
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:36:10] "[35m[1mGET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:37:47] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:37:56] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search=Anth HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:type object 'Orders' has no attribute 'column'
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/service.py", line 89, in get_orders
+    sf = QuerySearchFilter(model=Orders, search_string=search_string).all_columns
+  File "/Users/collier/PycharmProjects/3.0-template/app/support_classes.py", line 66, in all_columns
+    search_objects.append(Orders.column.like(f'%{self.search_string}%'))
+AttributeError: type object 'Orders' has no attribute 'column'
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:38:43] "[35m[1mGET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search=Anth HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:type object 'Orders' has no attribute 'column'
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/service.py", line 89, in get_orders
+    sf = QuerySearchFilter(model=Orders, search_string=search_string).all_columns
+  File "/Users/collier/PycharmProjects/3.0-template/app/support_classes.py", line 66, in all_columns
+    search_objects.append(self.model.column.like(f'%{self.search_string}%'))
+AttributeError: type object 'Orders' has no attribute 'column'
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:42:01] "[35m[1mGET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search=Anth HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:42:17] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search=Anth HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:50:31] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search=Anth HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:50:46] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search=Ruby HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:51:26] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search=Ruby HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:52:50] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search=Ruby HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:53:32] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search=Ruby HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:53:50] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search=Ruby HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:54:21] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search=Ruby HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:55:21] "GET /api/orders/?paginate=0&page=10&limit=20&order_direction=desc&date_from=2022-02-01&date_to=2022-08-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search=Ruby HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:55:54] "GET /api/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:55:54] "[36mGET /swaggerui/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:55:54] "[36mGET /swaggerui/droid-sans.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:55:54] "[36mGET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:55:54] "[36mGET /swaggerui/swagger-ui.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:55:54] "GET /api/swagger.json HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:55:54] "[36mGET /swaggerui/favicon-32x32.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:56:28] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search_string=Ruby HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:56:54] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search_string=Ruby HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:57:44] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search_string=Ruby HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 14:58:01] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search_string=Ruby HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 15:00:25] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search_string=Ruby HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 15:01:27] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search_string=Ruby HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 15:01:41] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search_string=Ruby HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 15:02:03] "GET /api/orders/?paginate=1&page=1&limit=5&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search_string=Ruby HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 15:02:07] "GET /api/orders/?paginate=1&page=1&limit=5&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 15:02:15] "GET /api/orders/?paginate=1&page=64&limit=5&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 15:04:55] "GET /api/orders/?paginate=1&page=64&limit=5&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 15:05:01] "GET /api/orders/?paginate=1&page=64&limit=5&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search_string=Ruby HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 15:05:37] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search_string=Ruby HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 15:05:44] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search_string=Anth HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 15:06:16] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search_string=Anth HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 15:09:00] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search_string=Anth HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 15:09:26] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search_string=Anth HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 15:09:31] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search_string=Anthony HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 15:09:33] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search_string=Anthony. HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 15:09:44] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search_string=Anthony. HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 15:20:20] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f&search_string=Anthony. HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 15:20:23] "GET /api/orders/?paginate=0&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 15:20:42] "GET /api/orders/?paginate=0&date_from=2022-01-01&date_to=2022-05-01&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 15:20:57] "GET /api/orders/?paginate=0&date_from=2022-01-01&date_to=2022-04-19&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 15:21:03] "GET /api/orders/?paginate=0&date_from=2022-01-01&date_to=2022-04-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 15:22:17] "GET /api/orders/?paginate=0&date_from=2022-01-01&date_to=2022-04-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/May/2022 15:22:23] "GET /api/orders/?paginate=0&order_direction=asc&date_from=2022-01-01&date_to=2022-04-18&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:02:42] "GET /api/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:02:42] "GET /swaggerui/swagger-ui.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:02:42] "GET /swaggerui/swagger-ui-bundle.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:02:42] "[36mGET /swaggerui/droid-sans.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:02:42] "GET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:02:43] "GET /api/swagger.json HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:02:43] "[36mGET /swaggerui/favicon-32x32.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:52:19] "GET /api/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:52:19] "[36mGET /swaggerui/swagger-ui.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:52:19] "[36mGET /swaggerui/droid-sans.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:52:19] "[36mGET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:52:19] "[36mGET /swaggerui/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:52:19] "GET /api/swagger.json HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:52:19] "[36mGET /swaggerui/favicon-32x32.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:53:05] "GET /api/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:53:05] "[36mGET /swaggerui/swagger-ui.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:53:05] "[36mGET /swaggerui/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:53:05] "[36mGET /swaggerui/droid-sans.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:53:05] "[36mGET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:53:05] "GET /api/swagger.json HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:53:05] "[36mGET /swaggerui/favicon-32x32.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:55:19] "GET /api/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:55:19] "[36mGET /swaggerui/droid-sans.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:55:19] "[36mGET /swaggerui/swagger-ui.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:55:19] "[36mGET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:55:19] "[36mGET /swaggerui/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:55:19] "GET /api/swagger.json HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:55:19] "[36mGET /swaggerui/favicon-32x32.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:56:19] "GET /api/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:56:19] "[36mGET /swaggerui/droid-sans.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:56:19] "[36mGET /swaggerui/swagger-ui.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:56:19] "[36mGET /swaggerui/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:56:19] "[36mGET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:56:19] "GET /api/swagger.json HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 09:56:19] "[36mGET /swaggerui/favicon-32x32.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:01:58] "GET /api/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:01:58] "[36mGET /swaggerui/droid-sans.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:01:58] "[36mGET /swaggerui/swagger-ui.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:01:58] "[36mGET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:01:58] "[36mGET /swaggerui/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:01:58] "GET /api/swagger.json HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:01:58] "[36mGET /swaggerui/favicon-32x32.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:18:11] "GET /api/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:18:11] "[36mGET /swaggerui/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:18:11] "[36mGET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:18:11] "[36mGET /swaggerui/swagger-ui.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:18:11] "[36mGET /swaggerui/droid-sans.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:18:11] "GET /api/swagger.json HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:18:11] "[36mGET /swaggerui/favicon-32x32.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:21:57] "GET /api/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:21:57] "[36mGET /swaggerui/droid-sans.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:21:57] "[36mGET /swaggerui/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:21:57] "[36mGET /swaggerui/swagger-ui.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:21:57] "[36mGET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:21:57] "GET /api/swagger.json HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:21:57] "[36mGET /swaggerui/favicon-32x32.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:22:34] "GET /api/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:22:34] "[36mGET /swaggerui/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:22:34] "[36mGET /swaggerui/droid-sans.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:22:34] "[36mGET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:22:34] "[36mGET /swaggerui/swagger-ui.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:22:34] "GET /api/swagger.json HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:22:34] "[36mGET /swaggerui/favicon-32x32.png HTTP/1.1[0m" 304 -
+ERROR:flask_restx.namespace.orders:name 'check_page_args' is not defined
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/controller.py", line 54, in get
+    check_page_args(paginate=pagination['paginate'], page=pagination['page'], limit=pagination['limit'])
+NameError: name 'check_page_args' is not defined
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:23:25] "[35m[1mGET /api/orders/?paginate=1&page=1&limit=5&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:'Pagination' object has no attribute 'total_pages'
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/service.py", line 104, in get_orders
+    return {'page': paginated_query.page, 'total_pages': paginated_query.total_pages, 'total_items': paginated_query.total_items, 'orders': response_list}, 200
+AttributeError: 'Pagination' object has no attribute 'total_pages'
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:23:55] "[35m[1mGET /api/orders/?paginate=1&page=1&limit=5&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:'Pagination' object has no attribute 'total_items'
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/service.py", line 104, in get_orders
+    return {'page': paginated_query.page, 'total_pages': paginated_query.pages, 'total_items': paginated_query.total_items, 'orders': response_list}, 200
+AttributeError: 'Pagination' object has no attribute 'total_items'
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:26:17] "[35m[1mGET /api/orders/?paginate=1&page=1&limit=5&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:26:34] "GET /api/orders/?paginate=1&page=1&limit=5&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:flask_restx.namespace.orders:'search_string'
+Traceback (most recent call last):
+  File "/Users/collier/PycharmProjects/3.0-template/app/api/orders/controller.py", line 56, in get
+    return get_orders(store_id=args['store_id'], search_string=args['search_string'], ob_args=ob_args, df_args=df_args, pg_args=pg_args)
+KeyError: 'search_string'
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 10:59:50] "[35m[1mGET /api/orders/?paginate=1&page=1&limit=5&store_id=a05d63ce-9c85-4058-807b-7040d5b95c7f HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:app:Exception on /api/ [GET]
+Traceback (most recent call last):
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/Users/collier/PycharmProjects/3.0-template/main.py", line 42, in init_params
+    raise Exception(resp.reason)
+Exception: Forbidden
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 16:11:53] "[35m[1mGET /api/ HTTP/1.1[0m" 500 -
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/Users/collier/PycharmProjects/3.0-template/main.py", line 42, in init_params
+    raise Exception(resp.reason)
+Exception: Forbidden
+INFO:werkzeug:127.0.0.1 - - [09/May/2022 16:11:54] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:app:Exception on /api/ [GET]
+Traceback (most recent call last):
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/Users/collier/PycharmProjects/3.0-template/main.py", line 42, in init_params
+    raise Exception(resp.reason)
+Exception: Forbidden
+INFO:werkzeug:127.0.0.1 - - [10/May/2022 07:30:05] "[35m[1mGET /api/ HTTP/1.1[0m" 500 -
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/Users/collier/PycharmProjects/3.0-template/main.py", line 42, in init_params
+    raise Exception(resp.reason)
+Exception: Forbidden
+INFO:werkzeug:127.0.0.1 - - [10/May/2022 07:30:05] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:app:Exception on /api/ [GET]
+Traceback (most recent call last):
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/Users/collier/PycharmProjects/3.0-template/main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM')
+Exception: Error when getting module token from USM
+INFO:werkzeug:127.0.0.1 - - [10/May/2022 07:31:03] "[35m[1mGET /api/ HTTP/1.1[0m" 500 -
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/Users/collier/PycharmProjects/3.0-template/main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM')
+Exception: Error when getting module token from USM
+INFO:werkzeug:127.0.0.1 - - [10/May/2022 07:31:03] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:app:Exception on /api/ [GET]
+Traceback (most recent call last):
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/Users/collier/PycharmProjects/3.0-template/main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM:' + resp.reason)
+Exception: Error when getting module token from USM:Forbidden
+INFO:werkzeug:127.0.0.1 - - [10/May/2022 07:31:32] "[35m[1mGET /api/ HTTP/1.1[0m" 500 -
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/Users/collier/PycharmProjects/3.0-template/main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM:' + resp.reason)
+Exception: Error when getting module token from USM:Forbidden
+INFO:werkzeug:127.0.0.1 - - [10/May/2022 07:31:32] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:app:Exception on /api/ [GET]
+Traceback (most recent call last):
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/Users/collier/PycharmProjects/3.0-template/main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + resp.reason)
+Exception: Error when getting module token from USM: Forbidden
+INFO:werkzeug:127.0.0.1 - - [10/May/2022 07:31:42] "[35m[1mGET /api/ HTTP/1.1[0m" 500 -
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/Users/collier/PycharmProjects/3.0-template/main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + resp.reason)
+Exception: Error when getting module token from USM: Forbidden
+INFO:werkzeug:127.0.0.1 - - [10/May/2022 07:31:42] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:app:Exception on /api/ [GET]
+Traceback (most recent call last):
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/Users/collier/PycharmProjects/3.0-template/main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 403 Forbidden
+INFO:werkzeug:127.0.0.1 - - [10/May/2022 07:32:17] "[35m[1mGET /api/ HTTP/1.1[0m" 500 -
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/Users/collier/PycharmProjects/3.0-template/main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 403 Forbidden
+INFO:werkzeug:127.0.0.1 - - [10/May/2022 07:32:17] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/Users/collier/PycharmProjects/3.0-template/main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 422 UNPROCESSABLE ENTITY
+INFO:werkzeug:127.0.0.1 - - [10/May/2022 11:24:42] "[35m[1mGET / HTTP/1.1[0m" 500 -
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/Users/collier/PycharmProjects/3.0-template/main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 422 UNPROCESSABLE ENTITY
+INFO:werkzeug:127.0.0.1 - - [10/May/2022 11:24:43] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/Users/collier/PycharmProjects/3.0-template/main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 404 NOT FOUND
+INFO:werkzeug:127.0.0.1 - - [10/May/2022 12:21:49] "[35m[1mGET / HTTP/1.1[0m" 500 -
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/Users/collier/PycharmProjects/3.0-template/main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 404 NOT FOUND
+INFO:werkzeug:127.0.0.1 - - [10/May/2022 12:21:50] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:app:Exception on /template [GET]
+Traceback (most recent call last):
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/Users/collier/PycharmProjects/3.0-template/main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 404 NOT FOUND
+INFO:werkzeug:127.0.0.1 - - [10/May/2022 12:21:53] "[35m[1mGET /template HTTP/1.1[0m" 500 -
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/Users/collier/.conda/envs/3.0-template/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/Users/collier/PycharmProjects/3.0-template/main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 404 NOT FOUND
+INFO:werkzeug:127.0.0.1 - - [10/May/2022 12:21:54] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [10/May/2022 16:39:35] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/May/2022 16:39:35] "GET /swaggerui/droid-sans.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/May/2022 16:39:35] "GET /swaggerui/swagger-ui-bundle.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/May/2022 16:39:35] "GET /swaggerui/swagger-ui.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/May/2022 16:39:35] "GET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/May/2022 16:39:35] "GET /swagger.json HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/May/2022 16:39:35] "GET /swaggerui/favicon-32x32.png HTTP/1.1" 200 -
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "/app/./main.py", line 53, in update_params
+    info = config.client.read(Config.module_parameters['database_credentials_path'])
+KeyError: 'database_credentials_path'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/./main.py", line 53, in update_params
+    info = config.client.read(Config.module_parameters['database_credentials_path'])
+KeyError: 'database_credentials_path'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/./main.py", line 53, in update_params
+    info = config.client.read(Config.module_parameters['database_credentials_path'])
+KeyError: 'database_credentials_path'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/./main.py", line 53, in update_params
+    info = config.client.read(Config.module_parameters['database_credentials_path'])
+KeyError: 'database_credentials_path'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/api.py", line 672, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.9/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1511, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1857, in preprocess_request
+    rv = self.ensure_sync(func)()
+  File "/app/./main.py", line 77, in update_params
+    update_params(quit_counter=quit_counter + 1)
+  File "/app/./main.py", line 77, in update_params
+    update_params(quit_counter=quit_counter + 1)
+  File "/app/./main.py", line 77, in update_params
+    update_params(quit_counter=quit_counter + 1)
+  File "/app/./main.py", line 74, in update_params
+    raise Exception
+Exception
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/app/./main.py", line 53, in update_params
+    info = config.client.read(Config.module_parameters['database_credentials_path'])
+KeyError: 'database_credentials_path'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/./main.py", line 53, in update_params
+    info = config.client.read(Config.module_parameters['database_credentials_path'])
+KeyError: 'database_credentials_path'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/./main.py", line 53, in update_params
+    info = config.client.read(Config.module_parameters['database_credentials_path'])
+KeyError: 'database_credentials_path'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/./main.py", line 53, in update_params
+    info = config.client.read(Config.module_parameters['database_credentials_path'])
+KeyError: 'database_credentials_path'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/api.py", line 672, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.9/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1511, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1857, in preprocess_request
+    rv = self.ensure_sync(func)()
+  File "/app/./main.py", line 77, in update_params
+    update_params(quit_counter=quit_counter + 1)
+  File "/app/./main.py", line 77, in update_params
+    update_params(quit_counter=quit_counter + 1)
+  File "/app/./main.py", line 77, in update_params
+    update_params(quit_counter=quit_counter + 1)
+  File "/app/./main.py", line 74, in update_params
+    raise Exception
+Exception
+ERROR:app:Exception on /buildings/ [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/api.py", line 403, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask/views.py", line 83, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/resource.py", line 49, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 121, in decorator
+    verify_jwt_in_request(optional, fresh, refresh, locations)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 69, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 312, in _decode_jwt_from_request
+    raise NoAuthorizationError(errors[0])
+flask_jwt_extended.exceptions.NoAuthorizationError: Missing Authorization Header
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1508, in full_dispatch_request
+    self.try_trigger_before_first_request_functions()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1560, in try_trigger_before_first_request_functions
+    self.ensure_sync(func)()
+  File "/app/./main.py", line 42, in init_params
+    raise Exception('Error when getting module token from USM: ' + str(resp.status_code) + ' ' + resp.reason)
+Exception: Error when getting module token from USM: 503 Service Temporarily Unavailable
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/api.py", line 672, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.9/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1511, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1857, in preprocess_request
+    rv = self.ensure_sync(func)()
+  File "/app/./main.py", line 80, in update_params
+    if config.module_token_expiry_time < datetime.now():
+TypeError: '<' not supported between instances of 'NoneType' and 'datetime.datetime'
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/api.py", line 672, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.9/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1511, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1857, in preprocess_request
+    rv = self.ensure_sync(func)()
+  File "/app/./main.py", line 80, in update_params
+    if config.module_token_expiry_time < datetime.now():
+TypeError: '<' not supported between instances of 'NoneType' and 'datetime.datetime'
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/api.py", line 672, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.9/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1511, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1857, in preprocess_request
+    rv = self.ensure_sync(func)()
+  File "/app/./main.py", line 80, in update_params
+    if config.module_token_expiry_time < datetime.now():
+TypeError: '<' not supported between instances of 'NoneType' and 'datetime.datetime'
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/api.py", line 672, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.9/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1511, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1857, in preprocess_request
+    rv = self.ensure_sync(func)()
+  File "/app/./main.py", line 80, in update_params
+    if config.module_token_expiry_time < datetime.now():
+TypeError: '<' not supported between instances of 'NoneType' and 'datetime.datetime'
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/api.py", line 672, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.9/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1511, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1857, in preprocess_request
+    rv = self.ensure_sync(func)()
+  File "/app/./main.py", line 80, in update_params
+    if config.module_token_expiry_time < datetime.now():
+TypeError: '<' not supported between instances of 'NoneType' and 'datetime.datetime'
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/api.py", line 672, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.9/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1511, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1857, in preprocess_request
+    rv = self.ensure_sync(func)()
+  File "/app/./main.py", line 80, in update_params
+    if config.module_token_expiry_time < datetime.now():
+TypeError: '<' not supported between instances of 'NoneType' and 'datetime.datetime'
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/api.py", line 672, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.9/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1511, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1857, in preprocess_request
+    rv = self.ensure_sync(func)()
+  File "/app/./main.py", line 80, in update_params
+    if config.module_token_expiry_time < datetime.now():
+TypeError: '<' not supported between instances of 'NoneType' and 'datetime.datetime'
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/api.py", line 672, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.9/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1511, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1857, in preprocess_request
+    rv = self.ensure_sync(func)()
+  File "/app/./main.py", line 80, in update_params
+    if config.module_token_expiry_time < datetime.now():
+TypeError: '<' not supported between instances of 'NoneType' and 'datetime.datetime'
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/api.py", line 672, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.9/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1511, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1857, in preprocess_request
+    rv = self.ensure_sync(func)()
+  File "/app/./main.py", line 80, in update_params
+    if config.module_token_expiry_time < datetime.now():
+TypeError: '<' not supported between instances of 'NoneType' and 'datetime.datetime'
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/api.py", line 672, in error_router
+    return original_handler(e)
+  File "/usr/local/lib/python3.9/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1511, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1857, in preprocess_request
+    rv = self.ensure_sync(func)()
+  File "/app/./main.py", line 80, in update_params
+    if config.module_token_expiry_time < datetime.now():
+TypeError: '<' not supported between instances of 'NoneType' and 'datetime.datetime'
+ERROR:flask_restx.namespace.buildings:<Flask 'app'> has no 'scoped_session' attribute. You need to initialize it with a flask_scoped_session.
+Traceback (most recent call last):
+  File "/app/./app/api/buildings/service.py", line 22, in get_building_data
+    building_data = current_session.query(Buildings).filter(Buildings.building_id == building_id, Buildings.deleted_at == None).one()
+  File "/usr/local/lib/python3.9/site-packages/werkzeug/local.py", line 422, in __get__
+    obj = instance._get_current_object()
+  File "/usr/local/lib/python3.9/site-packages/werkzeug/local.py", line 544, in _get_current_object
+    return self.__local()  # type: ignore
+  File "/usr/local/lib/python3.9/site-packages/flask_sqlalchemy_session/__init__.py", line 27, in _get_session
+    raise AttributeError(
+AttributeError: <Flask 'app'> has no 'scoped_session' attribute. You need to initialize it with a flask_scoped_session.
+ERROR:app:Exception on /buildings/ [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/api.py", line 403, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask/views.py", line 83, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/resource.py", line 49, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 121, in decorator
+    verify_jwt_in_request(optional, fresh, refresh, locations)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 69, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 312, in _decode_jwt_from_request
+    raise NoAuthorizationError(errors[0])
+flask_jwt_extended.exceptions.NoAuthorizationError: Missing Authorization Header
+ERROR:app:Exception on /buildings/ [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/api.py", line 403, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask/views.py", line 83, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/resource.py", line 49, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 121, in decorator
+    verify_jwt_in_request(optional, fresh, refresh, locations)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 69, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 312, in _decode_jwt_from_request
+    raise NoAuthorizationError(errors[0])
+flask_jwt_extended.exceptions.NoAuthorizationError: Missing Authorization Header
+ERROR:app:Exception on /buildings/ [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/api.py", line 403, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask/views.py", line 83, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/resource.py", line 49, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 121, in decorator
+    verify_jwt_in_request(optional, fresh, refresh, locations)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 69, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 312, in _decode_jwt_from_request
+    raise NoAuthorizationError(errors[0])
+flask_jwt_extended.exceptions.NoAuthorizationError: Missing Authorization Header
+ERROR:flask_migrate:Error: Directory migrations already exists and is not empty
+ERROR:flask_migrate:Error: Directory migrations already exists and is not empty
+ERROR:app:Exception on /buildings/ [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/api.py", line 403, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask/views.py", line 83, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/resource.py", line 49, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 121, in decorator
+    verify_jwt_in_request(optional, fresh, refresh, locations)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 69, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 312, in _decode_jwt_from_request
+    raise NoAuthorizationError(errors[0])
+flask_jwt_extended.exceptions.NoAuthorizationError: Missing Authorization Header
+ERROR:app:Exception on /buildings/ [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/api.py", line 403, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask/views.py", line 83, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/resource.py", line 49, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 121, in decorator
+    verify_jwt_in_request(optional, fresh, refresh, locations)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 69, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 312, in _decode_jwt_from_request
+    raise NoAuthorizationError(errors[0])
+flask_jwt_extended.exceptions.NoAuthorizationError: Missing Authorization Header
+ERROR:app:Exception on /buildings/ [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/api.py", line 403, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask/views.py", line 83, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/resource.py", line 49, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 121, in decorator
+    verify_jwt_in_request(optional, fresh, refresh, locations)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 69, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 312, in _decode_jwt_from_request
+    raise NoAuthorizationError(errors[0])
+flask_jwt_extended.exceptions.NoAuthorizationError: Missing Authorization Header
+ERROR:app:Exception on /buildings/ [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/api.py", line 403, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask/views.py", line 83, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/resource.py", line 49, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 121, in decorator
+    verify_jwt_in_request(optional, fresh, refresh, locations)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 69, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 312, in _decode_jwt_from_request
+    raise NoAuthorizationError(errors[0])
+flask_jwt_extended.exceptions.NoAuthorizationError: Missing 'Bearer' type in 'Authorization' header. Expected 'Authorization: Bearer <JWT>'
+ERROR:app:Exception on /buildings/ [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/api.py", line 403, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask/views.py", line 83, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/resource.py", line 49, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 121, in decorator
+    verify_jwt_in_request(optional, fresh, refresh, locations)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 69, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 312, in _decode_jwt_from_request
+    raise NoAuthorizationError(errors[0])
+flask_jwt_extended.exceptions.NoAuthorizationError: Missing 'Bearer' type in 'Authorization' header. Expected 'Authorization: Bearer <JWT>'
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.17.0.2:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.17.0.2:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/app/app/api/buildings/controller.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.17.0.2:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+ERROR:app:Exception on /buildings/ [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/api.py", line 403, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask/views.py", line 83, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/resource.py", line 49, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 121, in decorator
+    verify_jwt_in_request(optional, fresh, refresh, locations)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 69, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 312, in _decode_jwt_from_request
+    raise NoAuthorizationError(errors[0])
+flask_jwt_extended.exceptions.NoAuthorizationError: Missing 'Bearer' type in 'Authorization' header. Expected 'Authorization: Bearer <JWT>'
+ERROR:app:Exception on /buildings/ [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/api.py", line 403, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask/views.py", line 83, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/resource.py", line 49, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 121, in decorator
+    verify_jwt_in_request(optional, fresh, refresh, locations)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 69, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 312, in _decode_jwt_from_request
+    raise NoAuthorizationError(errors[0])
+flask_jwt_extended.exceptions.NoAuthorizationError: Missing 'Bearer' type in 'Authorization' header. Expected 'Authorization: Bearer <JWT>'
+ERROR:flask_restx.namespace.buildings:You must call `@jwt_required()` or `verify_jwt_in_request()` before using this method
+Traceback (most recent call last):
+  File "/app/./app/api/buildings/controller.py", line 40, in get
+    check_entity_access(endpoint_id='TPL-BUI-0', entity_id=args['building_id'])
+  File "/app/./app/authentication.py", line 18, in check_entity_access
+    token = get_jwt()
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 24, in get_jwt
+    raise RuntimeError(
+RuntimeError: You must call `@jwt_required()` or `verify_jwt_in_request()` before using this method
+ERROR:flask_restx.namespace.buildings:You must call `@jwt_required()` or `verify_jwt_in_request()` before using this method
+Traceback (most recent call last):
+  File "/app/./app/api/buildings/controller.py", line 40, in get
+    check_entity_access(endpoint_id='TPL-BUI-0', entity_id=args['building_id'])
+  File "/app/./app/authentication.py", line 18, in check_entity_access
+    token = get_jwt()
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 24, in get_jwt
+    raise RuntimeError(
+RuntimeError: You must call `@jwt_required()` or `verify_jwt_in_request()` before using this method
+ERROR:flask_restx.namespace.buildings:You must call `@jwt_required()` or `verify_jwt_in_request()` before using this method
+Traceback (most recent call last):
+  File "/app/./app/api/buildings/controller.py", line 40, in get
+    check_entity_access(endpoint_id='TPL-BUI-0', entity_id=args['building_id'])
+  File "/app/./app/authentication.py", line 18, in check_entity_access
+    token = get_jwt()
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 24, in get_jwt
+    raise RuntimeError(
+RuntimeError: You must call `@jwt_required()` or `verify_jwt_in_request()` before using this method
+ERROR:app:Exception on /buildings/ [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/api.py", line 403, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask/views.py", line 83, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/resource.py", line 49, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 121, in decorator
+    verify_jwt_in_request(optional, fresh, refresh, locations)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 69, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 312, in _decode_jwt_from_request
+    raise NoAuthorizationError(errors[0])
+flask_jwt_extended.exceptions.NoAuthorizationError: Missing 'Bearer' type in 'Authorization' header. Expected 'Authorization: Bearer <JWT>'
+ERROR:api:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-BUI-1, entity_id: string
+NoneType: None
+ERROR:flask_restx.namespace.buildings:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-BUI-1, entity_id: string
+Traceback (most recent call last):
+  File "/app/./app/api/buildings/controller.py", line 59, in post
+    check_entity_access(endpoint_id='TPL-BUI-1', entity_id=data['licensee_id'])
+  File "/app/./app/authentication.py", line 28, in check_entity_access
+    raise AuthenticationError(logger='api', msg=f'user_id: {token["user_id"]}, user_email: {token["email"]}, endpoint_id: {endpoint_id}, entity_id: {entity_id}')
+app.support_classes.AuthenticationError: user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-BUI-1, entity_id: string
+ERROR:app:Exception on /buildings/ [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/api.py", line 403, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask/views.py", line 83, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/resource.py", line 49, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 121, in decorator
+    verify_jwt_in_request(optional, fresh, refresh, locations)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 69, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 312, in _decode_jwt_from_request
+    raise NoAuthorizationError(errors[0])
+flask_jwt_extended.exceptions.NoAuthorizationError: Missing 'Bearer' type in 'Authorization' header. Expected 'Authorization: Bearer <JWT>'
+ERROR:app:Exception on /buildings/ [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/api.py", line 403, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask/views.py", line 83, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_restx/resource.py", line 49, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 121, in decorator
+    verify_jwt_in_request(optional, fresh, refresh, locations)
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 69, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/usr/local/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 312, in _decode_jwt_from_request
+    raise NoAuthorizationError(errors[0])
+flask_jwt_extended.exceptions.NoAuthorizationError: Missing 'Bearer' type in 'Authorization' header. Expected 'Authorization: Bearer <JWT>'
+ERROR:api:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-BUI-1, entity_id: string
+NoneType: None
+ERROR:flask_restx.namespace.buildings:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-BUI-1, entity_id: string
+Traceback (most recent call last):
+  File "/app/./app/api/buildings/controller.py", line 59, in post
+    check_entity_access(endpoint_id='TPL-BUI-1', entity_id=data['licensee_id'])
+  File "/app/./app/authentication.py", line 29, in check_entity_access
+    raise AuthenticationError(logger='api', msg=f'user_id: {token["user_id"]}, user_email: {token["email"]}, endpoint_id: {endpoint_id}, entity_id: {entity_id}')
+app.support_classes.AuthenticationError: user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-BUI-1, entity_id: string
+ERROR:api:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-BUI-1, entity_id: string
+NoneType: None
+ERROR:flask_restx.namespace.buildings:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-BUI-1, entity_id: string
+Traceback (most recent call last):
+  File "/app/./app/api/buildings/controller.py", line 59, in post
+    check_entity_access(endpoint_id='TPL-BUI-1', entity_id=data['licensee_id'])
+  File "/app/./app/authentication.py", line 29, in check_entity_access
+    raise AuthenticationError(logger='api', msg=f'user_id: {token["user_id"]}, user_email: {token["email"]}, endpoint_id: {endpoint_id}, entity_id: {entity_id}')
+app.support_classes.AuthenticationError: user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-BUI-1, entity_id: string
+ERROR:api:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-BUI-1, entity_id: string
+NoneType: None
+ERROR:flask_restx.namespace.buildings:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-BUI-1, entity_id: string
+Traceback (most recent call last):
+  File "/app/./app/api/buildings/controller.py", line 59, in post
+    check_entity_access(endpoint_id='TPL-BUI-1', entity_id=data['licensee_id'])
+  File "/app/./app/authentication.py", line 29, in check_entity_access
+    raise AuthenticationError(logger='api', msg=f'user_id: {token["user_id"]}, user_email: {token["email"]}, endpoint_id: {endpoint_id}, entity_id: {entity_id}')
+app.support_classes.AuthenticationError: user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-BUI-1, entity_id: string
+ERROR:api:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-BUI-1, entity_id: string
+NoneType: None
+ERROR:flask_restx.namespace.buildings:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-BUI-1, entity_id: string
+Traceback (most recent call last):
+  File "/app/./app/api/buildings/controller.py", line 59, in post
+    check_entity_access(endpoint_id='TPL-BUI-1', entity_id=data['licensee_id'])
+  File "/app/./app/authentication.py", line 31, in check_entity_access
+    raise AuthenticationError(logger='api', msg=f'user_id: {token["user_id"]}, user_email: {token["email"]}, endpoint_id: {endpoint_id}, entity_id: {entity_id}')
+app.support_classes.AuthenticationError: user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-BUI-1, entity_id: string
+ERROR:api:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-BUI-1, entity_id: string
+NoneType: None
+ERROR:flask_restx.namespace.buildings:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-BUI-1, entity_id: string
+Traceback (most recent call last):
+  File "/app/./app/api/buildings/controller.py", line 59, in post
+    check_entity_access(endpoint_id='TPL-BUI-1', entity_id=data['licensee_id'])
+  File "/app/./app/authentication.py", line 32, in check_entity_access
+    raise AuthenticationError(logger='api', msg=f'user_id: {token["user_id"]}, user_email: {token["email"]}, endpoint_id: {endpoint_id}, entity_id: {entity_id}')
+app.support_classes.AuthenticationError: user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-BUI-1, entity_id: string
+ERROR:flask_restx.namespace.buildings:'admin_access'
+Traceback (most recent call last):
+  File "/app/./app/api/buildings/controller.py", line 59, in post
+    check_entity_access(endpoint_id='TPL-BUI-1', entity_id=data['licensee_id'])
+  File "/app/./app/authentication.py", line 24, in check_entity_access
+    print(token['admin_access'],"admin access")
+KeyError: 'admin_access'
+ERROR:flask_restx.namespace.buildings:'admin_access'
+Traceback (most recent call last):
+  File "/app/./app/api/buildings/controller.py", line 59, in post
+    check_entity_access(endpoint_id='TPL-BUI-1', entity_id=data['licensee_id'])
+  File "/app/./app/authentication.py", line 24, in check_entity_access
+    print(token['admin_access'],"admin access")
+KeyError: 'admin_access'
+ERROR:api:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-BUI-1, entity_id: string
+NoneType: None
+ERROR:flask_restx.namespace.buildings:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-BUI-1, entity_id: string
+Traceback (most recent call last):
+  File "/app/./app/api/buildings/controller.py", line 59, in post
+    check_entity_access(endpoint_id='TPL-BUI-1', entity_id=data['licensee_id'])
+  File "/app/./app/authentication.py", line 38, in check_entity_access
+    raise AuthenticationError(logger='api', msg=f'user_id: {token["user_id"]}, user_email: {token["email"]}, endpoint_id: {endpoint_id}, entity_id: {entity_id}')
+app.support_classes.AuthenticationError: user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-BUI-1, entity_id: string
+ERROR:api:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-BUI-1, entity_id: ORG-0
+NoneType: None
+ERROR:flask_restx.namespace.buildings:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-BUI-1, entity_id: ORG-0
+Traceback (most recent call last):
+  File "/app/./app/api/buildings/controller.py", line 59, in post
+    check_entity_access(endpoint_id='TPL-BUI-1', entity_id=data['licensee_id'])
+  File "/app/./app/authentication.py", line 33, in check_entity_access
+    raise AuthenticationError(logger='api', msg=f'user_id: {token["user_id"]}, user_email: {token["email"]}, endpoint_id: {endpoint_id}, entity_id: {entity_id}')
+app.support_classes.AuthenticationError: user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-BUI-1, entity_id: ORG-0
+ERROR:api:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-BUI-1, entity_id: ORG-0
+NoneType: None
+ERROR:flask_restx.namespace.buildings:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-BUI-1, entity_id: ORG-0
+Traceback (most recent call last):
+  File "/app/./app/api/buildings/controller.py", line 59, in post
+    check_entity_access(endpoint_id='TPL-BUI-1', entity_id=data['licensee_id'])
+  File "/app/./app/authentication.py", line 33, in check_entity_access
+    raise AuthenticationError(logger='api', msg=f'user_id: {token["user_id"]}, user_email: {token["email"]}, endpoint_id: {endpoint_id}, entity_id: {entity_id}')
+app.support_classes.AuthenticationError: user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-BUI-1, entity_id: ORG-0
+ERROR:api:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-ORG-1, entity_id: ORG-0
+NoneType: None
+ERROR:flask_restx.namespace.buildings:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-ORG-1, entity_id: ORG-0
+Traceback (most recent call last):
+  File "/app/./app/api/buildings/controller.py", line 59, in post
+    check_entity_access(endpoint_id='TPL-BUI-1', entity_id=data['licensee_id'])
+  File "/app/./app/authentication.py", line 39, in check_entity_access
+    raise AuthenticationError(logger='api', msg=f'user_id: {token["user_id"]}, user_email: {token["email"]}, endpoint_id: {endpoint_id}, entity_id: {entity_id}')
+app.support_classes.AuthenticationError: user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-ORG-1, entity_id: ORG-0
+ERROR:api:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-ORG-1, entity_id: ORG-0
+NoneType: None
+ERROR:flask_restx.namespace.buildings:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-ORG-1, entity_id: ORG-0
+Traceback (most recent call last):
+  File "/app/./app/api/buildings/controller.py", line 59, in post
+    check_entity_access(endpoint_id='TPL-BUI-1', entity_id=data['licensee_id'])
+  File "/app/./app/authentication.py", line 39, in check_entity_access
+    raise AuthenticationError(logger='api', msg=f'user_id: {token["user_id"]}, user_email: {token["email"]}, endpoint_id: {endpoint_id}, entity_id: {entity_id}')
+app.support_classes.AuthenticationError: user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-ORG-1, entity_id: ORG-0
+ERROR:api:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-ORG-1, entity_id: ORG-0
+NoneType: None
+ERROR:flask_restx.namespace.buildings:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-ORG-1, entity_id: ORG-0
+Traceback (most recent call last):
+  File "/app/./app/api/buildings/controller.py", line 59, in post
+    check_entity_access(endpoint_id='TPL-BUI-1', entity_id=data['licensee_id'])
+  File "/app/./app/authentication.py", line 39, in check_entity_access
+    raise AuthenticationError(logger='api', msg=f'user_id: {token["user_id"]}, user_email: {token["email"]}, endpoint_id: {endpoint_id}, entity_id: {entity_id}')
+app.support_classes.AuthenticationError: user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-ORG-1, entity_id: ORG-0
+ERROR:api:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-ORG-1, entity_id: ORG-0
+NoneType: None
+ERROR:flask_restx.namespace.buildings:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-ORG-1, entity_id: ORG-0
+Traceback (most recent call last):
+  File "/app/./app/api/buildings/controller.py", line 59, in post
+    check_entity_access(endpoint_id='TPL-BUI-1', entity_id=data['licensee_id'])
+  File "/app/./app/authentication.py", line 39, in check_entity_access
+    raise AuthenticationError(logger='api', msg=f'user_id: {token["user_id"]}, user_email: {token["email"]}, endpoint_id: {endpoint_id}, entity_id: {entity_id}')
+app.support_classes.AuthenticationError: user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-ORG-1, entity_id: ORG-0
+ERROR:api:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-ORG-1, entity_id: ORG-0
+NoneType: None
+ERROR:flask_restx.namespace.buildings:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-ORG-1, entity_id: ORG-0
+Traceback (most recent call last):
+  File "/app/./app/api/buildings/controller.py", line 59, in post
+    check_entity_access(endpoint_id='TPL-BUI-1', entity_id=data['licensee_id'])
+  File "/app/./app/authentication.py", line 39, in check_entity_access
+    raise AuthenticationError(logger='api', msg=f'user_id: {token["user_id"]}, user_email: {token["email"]}, endpoint_id: {endpoint_id}, entity_id: {entity_id}')
+app.support_classes.AuthenticationError: user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-ORG-1, entity_id: ORG-0
+ERROR:flask_migrate:Error: Directory migrations already exists and is not empty
+ERROR:flask_migrate:Error: Directory migrations already exists and is not empty
+ERROR:flask_migrate:Error: Directory migrations already exists and is not empty
+ERROR:flask_migrate:Error: Directory migrations already exists and is not empty
+ERROR:flask_migrate:Error: Directory migrations already exists and is not empty
+ERROR:flask_restx.namespace.kiosks:(psycopg2.errors.InsufficientPrivilege) permission denied for table kiosks
+
+[SQL: SELECT kiosks.kiosk_id AS kiosks_kiosk_id 
+FROM kiosks ORDER BY kiosks.created_at DESC 
+ LIMIT %(param_1)s]
+[parameters: {'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1799, in _execute_context
+    self.dialect.do_execute(
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.InsufficientPrivilege: permission denied for table kiosks
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/app/./app/api/kiosks/service.py", line 25, in create_kiosks
+    kiosk_id = 'KIO-' + get_new_entity_id(Kiosks)
+  File "/app/./app/utils.py", line 60, in get_new_entity_id
+    latest_entity_id = current_session.query(entity_class).order_by(entity_class.created_at.desc()).with_entities(id_column).first()
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2762, in first
+    return self.limit(1)._iter().first()
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2846, in _iter
+    result = self.session.execute(
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1689, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1611, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 323, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1478, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1842, in _execute_context
+    self._handle_dbapi_exception(
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2023, in _handle_dbapi_exception
+    util.raise_(
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1799, in _execute_context
+    self.dialect.do_execute(
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.InsufficientPrivilege) permission denied for table kiosks
+
+[SQL: SELECT kiosks.kiosk_id AS kiosks_kiosk_id 
+FROM kiosks ORDER BY kiosks.created_at DESC 
+ LIMIT %(param_1)s]
+[parameters: {'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+ERROR:flask_restx.namespace.kiosks:'header_image'
+Traceback (most recent call last):
+  File "/app/./app/api/kiosks/service.py", line 34, in create_kiosks
+    header_image_id=data['header_image'],
+KeyError: 'header_image'
+ERROR:flask_restx.namespace.kiosks:(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type uuid: "dfdffdafd"
+LINE 1: ... kiosk', 'This is the kiosk name', '45', 0, NULL, 'dfdffdafd...
+                                                             ^
+
+[SQL: INSERT INTO kiosks (kiosk_id, kiosk_name, description, service_provider_id, building_module_id, building_id, thumbnail_image_id, header_image_id, organisation_id, service_provider_internal_id, created_at, updated_at, deleted_at) VALUES (%(kiosk_id)s, %(kiosk_name)s, %(description)s, %(service_provider_id)s, %(building_module_id)s, %(building_id)s, %(thumbnail_image_id)s, %(header_image_id)s, %(organisation_id)s, %(service_provider_internal_id)s, %(created_at)s, %(updated_at)s, %(deleted_at)s)]
+[parameters: {'kiosk_id': 'KIO-0', 'kiosk_name': 'Test kiosk', 'description': 'This is the kiosk name', 'service_provider_id': '45', 'building_module_id': 0, 'building_id': None, 'thumbnail_image_id': 'dfdffdafd', 'header_image_id': 'dfdff', 'organisation_id': None, 'service_provider_internal_id': 'dfafda', 'created_at': '2022-05-20 06:37:44.545371', 'updated_at': None, 'deleted_at': None}]
+(Background on this error at: https://sqlalche.me/e/14/9h9h)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1799, in _execute_context
+    self.dialect.do_execute(
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.InvalidTextRepresentation: invalid input syntax for type uuid: "dfdffdafd"
+LINE 1: ... kiosk', 'This is the kiosk name', '45', 0, NULL, 'dfdffdafd...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/app/./app/api/kiosks/service.py", line 56, in create_kiosks
+    current_session.commit()
+  File "<string>", line 2, in commit
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 829, in commit
+    self._prepare_impl()
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 3339, in flush
+    self._flush(objects)
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 3479, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 3439, in _flush
+    flush_context.execute()
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/persistence.py", line 242, in save_obj
+    _emit_insert_statements(
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/persistence.py", line 1094, in _emit_insert_statements
+    c = connection._execute_20(
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1611, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 323, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1478, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1842, in _execute_context
+    self._handle_dbapi_exception(
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2023, in _handle_dbapi_exception
+    util.raise_(
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1799, in _execute_context
+    self.dialect.do_execute(
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type uuid: "dfdffdafd"
+LINE 1: ... kiosk', 'This is the kiosk name', '45', 0, NULL, 'dfdffdafd...
+                                                             ^
+
+[SQL: INSERT INTO kiosks (kiosk_id, kiosk_name, description, service_provider_id, building_module_id, building_id, thumbnail_image_id, header_image_id, organisation_id, service_provider_internal_id, created_at, updated_at, deleted_at) VALUES (%(kiosk_id)s, %(kiosk_name)s, %(description)s, %(service_provider_id)s, %(building_module_id)s, %(building_id)s, %(thumbnail_image_id)s, %(header_image_id)s, %(organisation_id)s, %(service_provider_internal_id)s, %(created_at)s, %(updated_at)s, %(deleted_at)s)]
+[parameters: {'kiosk_id': 'KIO-0', 'kiosk_name': 'Test kiosk', 'description': 'This is the kiosk name', 'service_provider_id': '45', 'building_module_id': 0, 'building_id': None, 'thumbnail_image_id': 'dfdffdafd', 'header_image_id': 'dfdff', 'organisation_id': None, 'service_provider_internal_id': 'dfafda', 'created_at': '2022-05-20 06:37:44.545371', 'updated_at': None, 'deleted_at': None}]
+(Background on this error at: https://sqlalche.me/e/14/9h9h)
+ERROR:flask_restx.namespace.kiosks:name 'check_entity_access' is not defined
+Traceback (most recent call last):
+  File "/app/./app/api/kiosks/controller.py", line 35, in post
+    check_entity_access(endpoint_id='KIO-KIO-0', entity_id=data['service_provider_id'])
+NameError: name 'check_entity_access' is not defined
+ERROR:api:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-ORG-1, entity_id: ORG-0
+NoneType: None
+ERROR:flask_restx.namespace.kiosks:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-ORG-1, entity_id: ORG-0
+Traceback (most recent call last):
+  File "/app/./app/api/kiosks/controller.py", line 36, in post
+    check_entity_access(endpoint_id='KIO-KIO-0', entity_id=data['service_provider_id'])
+  File "/app/./app/authentication.py", line 39, in check_entity_access
+    raise AuthenticationError(logger='api', msg=f'user_id: {token["user_id"]}, user_email: {token["email"]}, endpoint_id: {endpoint_id}, entity_id: {entity_id}')
+app.support_classes.AuthenticationError: user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-ORG-1, entity_id: ORG-0
+ERROR:api:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-ORG-1, entity_id: ORG-0
+NoneType: None
+ERROR:flask_restx.namespace.kiosks:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-ORG-1, entity_id: ORG-0
+Traceback (most recent call last):
+  File "/app/./app/api/kiosks/controller.py", line 36, in post
+    check_entity_access(endpoint_id='KIO-KIO-0', entity_id=data['service_provider_id'])
+  File "/app/./app/authentication.py", line 39, in check_entity_access
+    raise AuthenticationError(logger='api', msg=f'user_id: {token["user_id"]}, user_email: {token["email"]}, endpoint_id: {endpoint_id}, entity_id: {entity_id}')
+app.support_classes.AuthenticationError: user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-ORG-1, entity_id: ORG-0
+ERROR:api:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-ORG-1, entity_id: ORG-0
+NoneType: None
+ERROR:flask_restx.namespace.kiosks:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-ORG-1, entity_id: ORG-0
+Traceback (most recent call last):
+  File "/app/./app/api/kiosks/controller.py", line 36, in post
+    check_entity_access(endpoint_id='KIO-KIO-0', entity_id=data['service_provider_id'])
+  File "/app/./app/authentication.py", line 39, in check_entity_access
+    raise AuthenticationError(logger='api', msg=f'user_id: {token["user_id"]}, user_email: {token["email"]}, endpoint_id: {endpoint_id}, entity_id: {entity_id}')
+app.support_classes.AuthenticationError: user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-ORG-1, entity_id: ORG-0
+ERROR:api:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-ORG-1, entity_id: ORG-0
+NoneType: None
+ERROR:flask_restx.namespace.kiosks:user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-ORG-1, entity_id: ORG-0
+Traceback (most recent call last):
+  File "/app/./app/api/kiosks/controller.py", line 36, in post
+    check_entity_access(endpoint_id='KIO-KIO-0', entity_id=data['service_provider_id'])
+  File "/app/./app/authentication.py", line 39, in check_entity_access
+app.support_classes.AuthenticationError: user_id: 02a1d937-3525-4e1d-960d-a9bcb5bb995a, user_email: anup.dahal@resimator.fi, endpoint_id: TPL-ORG-1, entity_id: ORG-0
+ERROR:flask_restx.namespace.kiosks:name 'access_response' is not defined
+Traceback (most recent call last):
+  File "/app/./app/api/kiosks/service.py", line 59, in create_kiosks
+    if access_response.status_code != 200:
+NameError: name 'access_response' is not defined

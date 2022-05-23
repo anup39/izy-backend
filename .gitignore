@@ -1,0 +1,10 @@
+app/api/__pycache__
+app/__pycache__
+app/api/buildings/__pycache__
+app/api/create_data/__pycache__
+app/api/kiosks/__pycache__
+app/api/licensees/__pycache__
+app/api/orders/__pycache__
+app/api/organisations/__pycache__
+app/models/__pycache__
+app/models/logs
