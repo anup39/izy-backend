@@ -26,3 +26,4 @@ class Buildings(Model):
     created_at = Column(db.DateTime)
     updated_at = Column(db.DateTime)
     deleted_at = Column(db.DateTime)
+

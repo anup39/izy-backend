@@ -80,7 +80,7 @@ def create_building(data):
         tenant_registration_codes = [row.tenant_registration_code for row in current_session.query(Buildings).with_entities(Buildings.tenant_registration_code).all()]
         tenant_registration_code = randint(10000, 99999)
         while tenant_registration_code in tenant_registration_codes:
-            tenant_registration_code = randint(10000, 99999)
+            tenant_registration_code = randint(10000, 99999) 
 
         new_building = Buildings(
             building_id=building_id,
@@ -128,7 +128,7 @@ def create_building(data):
             current_session.add(new_building_module)
 
 
-        access_response = update_creator_access(user_id=get_token_user_id(), entity_id=building_id, role_id='ROL-6')
+        access_response = update_creator_access(user_id=get_token_user_id(), entity_id=building_id, role_id='ROL-8')
         if access_response.status_code != 200:
             return error_response('Could not update access for new entity, changes has not been committed')
 
@@ -203,6 +203,8 @@ def get_building_modules(building_id):
     except Exception as e:
         logger.exception(e)
         return error_response()
+
+        
 
 
 def update_building_module_state(data, endpoint_id):

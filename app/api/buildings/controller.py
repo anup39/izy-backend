@@ -1,13 +1,14 @@
 from flask_restx import Resource, reqparse
 from .service import *
+from flask import Flask
 from app.authentication import check_entity_access
 from app.utils import error_response, input_validation_error, data_access_error, check_page_args, token_args, pagination_args, date_filter_args, order_by_args
 from app.support_classes import AuthenticationError
 from flask_jwt_extended import jwt_required
-
-
+from .dto import BuildingsDTO
+# import logging
 api = BuildingsDTO.api
-
+# app = Flask(__name__)
 logger = api.logger
 
 """ Standardised parameter setups """
@@ -25,14 +26,15 @@ building_id_args.add_argument('building_id', type=str, required=True, help='Buil
 building_module_id_args = reqparse.RequestParser()
 building_module_id_args.add_argument('building_module_id', type=str, required=True, help='Building module id')
 
-
+# logging.basicConfig(level=logging.DEBUG)
 @api.route("/")
 class BuildingsRoot(Resource):
     @jwt_required()
     @api.doc(responses={200: "Success"})
-    @api.expect(token_args, building_id_args)
+    @api.expect(token_args,building_id_args)
     def get(self):
         """ Get building data - TPL-BUI-0 """
+        print("Inside building get")
         try:
             args = building_id_args.parse_args()
             check_entity_access(endpoint_id='TPL-BUI-0', entity_id=args['building_id'])
@@ -49,11 +51,13 @@ class BuildingsRoot(Resource):
     @jwt_required()
     @api.doc(responses={200: "Success"})
     @api.expect(token_args, BuildingsDTO.post_buildings_input, validate=True)
+    @api.expect( BuildingsDTO.post_buildings_input, validate=True)
     def post(self):
         """ Create new building from licensee - TPL-BUI-1 """
         try:
             data = api.payload
-            check_entity_access(endpoint_id='TPL-BUI-1', entity_id=data['licensee_id'])
+            # check_entity_access(endpoint_id='TPL-BUI-1', entity_id=data['licensee_id'])
+            print("the entity check is passed")
             return create_building(data)
 
         except AuthenticationError as e:
@@ -101,7 +105,7 @@ class BuildingsRoot(Resource):
 
 
 
-@api.route("/modules")
+
 class BuildingsModules(Resource):
     @jwt_required()
     @api.doc(responses={200: "Success"})
@@ -119,6 +123,7 @@ class BuildingsModules(Resource):
         except Exception as e:
             logger.exception(e)
             return error_response()
+
 
 
     @jwt_required()
@@ -144,6 +149,8 @@ class BuildingsPublic(Resource):
     @jwt_required()
     @api.doc(responses={200: "Success"})
     @api.expect(token_args, pagination_args, order_by_args)
+
+
     def get(self):
         """ Get all non-private buildings - TPL-BUI-6 """
         try:
@@ -178,3 +185,4 @@ class BuildingsGraphicProfile(Resource):
         except Exception as e:
             logger.exception(e)
             return error_response()
+

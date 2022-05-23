@@ -39,7 +39,7 @@ class OrganisationPost(Resource):
             logger.exception(e)
             return error_response()
 
-
+    
     @jwt_required()
     @api.doc(responses={200: "Success"})
     @api.expect(token_args, org_id_args)

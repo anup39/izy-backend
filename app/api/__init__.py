@@ -8,6 +8,7 @@ from .licensees.controller import api as licensees_ns
 from .buildings.controller import api as buildings_ns
 from .create_data.controller import api as create_data_ns
 from .orders.controller import api as orders_ns
+from .kiosks.controller import api as kiosks_ns
 
 
 api_bp = Blueprint("api", __name__)
@@ -19,4 +20,4 @@ api.add_namespace(organisation_ns)
 api.add_namespace(licensees_ns)
 api.add_namespace(buildings_ns)
 api.add_namespace(orders_ns)
-
+api.add_namespace(kiosks_ns)
